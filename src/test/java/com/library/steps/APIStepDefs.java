@@ -38,6 +38,7 @@ public class APIStepDefs {
     @When("I send GET request to {string} endpoint")
     public void i_send_get_request_to_endpoint(String endpoint) {
         response = givenPart.when().get(ConfigurationReader.getProperty("library.baseUri") + endpoint).prettyPeek();
+
         thenPart = response.then();
     }
     @Then("status code should be {int}")
